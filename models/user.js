@@ -35,13 +35,10 @@ userSchema.pre('save', function(next) {
 	});
 });
 
-
+// check this [different definition - use the lesson]
 userSchema.methods.comparePassword = function(tryPassword, cb) {
 	// 'this' represents the document that you called comparePassword on
-	bcrypt.compare(tryPassword, this.password, function(err, isMatch) {
-		if (err) return cb(err);
-		cb(null, isMatch);
-	});
+	bcrypt.compare(tryPassword, this.password, cb);
 };
 
 

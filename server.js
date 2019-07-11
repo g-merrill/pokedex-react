@@ -19,7 +19,8 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 // API Routes
 // const apiRouter = require('./routes/api');
-// app.use('/api', apiRouter);
+app.use('/api/users', require('./routes/api/users'));
+// add another API route
 
 // A "catch all" route for SPA's client-side routing
 app.get('/*', function(req, res) {
