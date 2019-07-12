@@ -3,11 +3,18 @@ const bcrypt = require('bcrypt');
 
 const SALT_ROUNDS = 6;
 
+const pokemonSchema = new mongoose.Schema({
+	name: {type: String, required: true, lowercase: true}
+},{
+	timestamps: true
+});
+
 // change to username? [x]
 const userSchema = new mongoose.Schema({
 	name: String,
 	email: {type: String, required: true, lowercase: true, unique: true},
-	password: String
+	password: String,
+	pokemon: [pokemonSchema]
 }, {
 	timestamps: true
 });

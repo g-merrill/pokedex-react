@@ -44,9 +44,23 @@ function logout() {
 	tokenService.removeToken();
 }
 
+function addPokemon(data) {
+	const options = {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+			'Authorization': 'Bearer ' + tokenService.getToken()
+		},
+		body: JSON.stringify(data)
+	};
+	// add error handling?
+	return fetch(BASE_URL + 'addPokemon', options).then(res => res.json());
+}
+
 export default {
 	signup,
 	getUser,
 	login,
-	logout
+	logout,
+	addPokemon
 };

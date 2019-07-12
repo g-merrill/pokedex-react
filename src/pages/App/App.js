@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import NavBar from '../../components/NavBar/NavBar';
+import PokedexPage from '../PokedexPage/PokedexPage';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
@@ -29,6 +30,7 @@ class App extends Component {
 
 
 	/*--- Lifecycle Methods ---*/
+	// add any other necessary auth
 
 	render() {
 		return (
@@ -38,6 +40,12 @@ class App extends Component {
 				</header>
 				<NavBar user={this.state.user} handleLogout={this.handleLogout} />
 				<Switch>
+					<Route exact path='/pokedex' render={() => (
+						userService.getUser() ?
+						<PokedexPage />
+						:
+						<Redirect to='/login' />
+					)}/>
 					<Route exact path='/signup' render={({ history }) => 
 						<SignupPage history={history} handleSignupOrLogin={this.handleSignupOrLogin} />
 					}/>

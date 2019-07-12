@@ -23,7 +23,7 @@ class LoginPage extends Component {
 			// Let <App> know a user has signed up!
 			this.props.handleSignupOrLogin();
 			// Successfully logged in --> Modify the redirect
-			this.props.history.push('/');
+			this.props.history.push('/pokedex');
 		} catch (err) {
 			// Use a modal or toast in your apps instead of alert
 			// update a message?

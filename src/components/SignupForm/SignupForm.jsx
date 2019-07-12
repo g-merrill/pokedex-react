@@ -27,7 +27,7 @@ class SignupForm extends Component {
 			// Let <App> know a user has signed up!
 			this.props.handleSignupOrLogin();
 			// Successfully signed up --> Modify the redirect
-			this.props.history.push('/');
+			this.props.history.push('/pokedex');
 		} catch (err) {
 			// Invalid user data (probably duplicate email)
 			this.props.updateMessage(err.message);

@@ -5,7 +5,8 @@ const SECRET = process.env.SECRET;
 // move this below the functions[x]
 module.exports = {
 	signup,
-	login
+	login,
+	create
 };
 
 async function signup(req, res) {
@@ -32,6 +33,21 @@ async function login(req, res) {
 			} else {
 				return res.status(401).json({err: 'bad credentials'});
 			}
+		});
+	} catch (err) {
+		return res.status(401).json(err);
+	}
+}
+
+async function create(req, res) {
+	try {
+		let user = await User.findOne({_id: req.user._id});
+		user.pokemon.push(req.body);
+		user.save(function(err, user) {
+			if (err) return res.status(400).json(err);
+			console.log(user);
+			// sending the pokemon may not be necessary if the JWT token already has the user document
+			res.status(200).json(user.pokemon);
 		});
 	} catch (err) {
 		return res.status(401).json(err);
