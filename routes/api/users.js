@@ -10,7 +10,7 @@ router.post('/login', usersCtrl.login);
 /*---------- Protected Routes ----------*/
 // Process the token for only the routes below
 router.use(require('../../config/auth'));
-router.post('/addPokemon', checkAuth, usersCtrl.create);
+router.post('/pokemon', checkAuth, usersCtrl.create);
 
 
 /*----- Helper Functions -----*/

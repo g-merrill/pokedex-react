@@ -54,7 +54,7 @@ function addPokemon(data) {
 		body: JSON.stringify(data)
 	};
 	// add error handling?
-	return fetch(BASE_URL + 'addPokemon', options).then(res => res.json());
+	return fetch(BASE_URL + 'pokemon', options).then(res => res.json());
 }
 
 export default {

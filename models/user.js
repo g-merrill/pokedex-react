@@ -4,7 +4,10 @@ const bcrypt = require('bcrypt');
 const SALT_ROUNDS = 6;
 
 const pokemonSchema = new mongoose.Schema({
-	name: {type: String, required: true, lowercase: true}
+	name: {type: String, required: true, lowercase: true},
+	types: Array,
+	abilities: Array,
+	imgURL: String
 },{
 	timestamps: true
 });
