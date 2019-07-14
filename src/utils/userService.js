@@ -44,6 +44,16 @@ function logout() {
 	tokenService.removeToken();
 }
 
+function getAllPokemon() {
+	const options = {
+		method: 'GET',
+		headers: {
+			'Authorization': 'Bearer ' + tokenService.getToken()
+		}
+	};
+	return fetch(BASE_URL + 'pokemon', options).then(res => res.json());
+}
+
 function addPokemon(data) {
 	const options = {
 		method: 'POST',
@@ -57,10 +67,24 @@ function addPokemon(data) {
 	return fetch(BASE_URL + 'pokemon', options).then(res => res.json());
 }
 
+function removePokemon(id) {
+	// convert id to string to make sure
+	id = id.toString();
+	const options = {
+		method: 'DELETE',
+		headers: {
+			'Authorization': 'Bearer ' + tokenService.getToken()
+		}
+	};
+	return fetch(BASE_URL + 'pokemon/' + id, options).then(res => res.json());
+}
+
 export default {
 	signup,
 	getUser,
 	login,
 	logout,
-	addPokemon
+	getAllPokemon,
+	addPokemon,
+	removePokemon
 };

@@ -2,12 +2,14 @@ const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 const SECRET = process.env.SECRET;
 
-// move this below the functions[x]
 module.exports = {
 	signup,
 	login,
-	create
+	index,
+	create,
+	dlte
 };
+
 
 async function signup(req, res) {
 	const user = new User(req.body);
@@ -39,6 +41,18 @@ async function login(req, res) {
 	}
 }
 
+// use to expose API and sort the pokémon if possible
+async function index(req, res) {
+	try {
+		let user = await User.findOne({_id: req.user._id});
+		res.status(200).json(user.pokemon);
+	} catch (err) {
+		return res.status(400).json(err);
+	}
+}
+
+
+// JWT token already has the user document, but will have stale list if pokémon are added
 async function create(req, res) {
 	try {
 		let user = await User.findOne({_id: req.user._id});
@@ -46,11 +60,23 @@ async function create(req, res) {
 		user.save(function(err, user) {
 			if (err) return res.status(400).json(err);
 			console.log(user);
-			// sending the pokemon may not be necessary if the JWT token already has the user document
 			res.status(200).json(user.pokemon);
 		});
 	} catch (err) {
-		return res.status(401).json(err);
+		return res.status(400).json(err);
+	}
+}
+
+async function dlte(req, res) {
+	try {
+		let user = await User.findOne({_id: req.user._id});
+		user.pokemon.id(req.params.id).remove();
+		user.save(function(err, user) {
+			if (err) return res.status(400).json(err);
+			res.status(200).json(user.pokemon);
+		});
+	} catch (err) {
+		return res.status(400).json(err);
 	}
 }
 

@@ -51,7 +51,7 @@ class AddPokemonForm extends Component {
 				<form className="form-horizontal" onSubmit={this.handleSubmit} autoComplete="off">
 					<div className="form-group">
 						<div className="col-sm-12">
-							<label for="name">Add a Pokémon:</label>
+							<label>Add a Pokémon:</label>
 							<input required type="text" className="form-control" placeholder="Pokémon Name" value={this.state.name} name="name" onChange={this.handleChange} />
 						</div>
 					</div>
