@@ -1,0 +1,77 @@
+.PokemonCard {
+	margin: 15px;
+	width: 15rem;
+}
+
+img.normal {
+	background-color: #A8A77A;
+}
+
+img.fire {
+	background-color: #EE8130;
+}
+
+img.water {
+	background-color: #6390F0;
+}
+
+img.electric {
+	background-color: #F7D02C;
+}
+
+img.grass {
+	background-color: #7AC74C;
+}
+
+img.ice {
+	background-color: #96D9D6;
+}
+
+img.fighting {
+	background-color: #C22E28;
+}
+
+img.poison {
+	background-color: #A33EA1;
+}
+
+img.ground {
+	background-color: #E2BF65;
+}
+
+img.flying {
+	background-color: #A98FF3;
+}
+
+img.psychic {
+	background-color: #F95587;
+}
+
+img.bug {
+	background-color: #A6B91A;
+}
+
+img.rock {
+	background-color: #B6A136;
+}
+
+img.ghost {
+	background-color: #735797;
+}
+
+img.dragon {
+	background-color: #6F35FC;
+}
+
+img.dark {
+	background-color: #705746;
+}
+
+img.steel {
+	background-color: #B7B7CE;
+}
+
+img.fairy {
+	background-color: #D685AD;
+}
+

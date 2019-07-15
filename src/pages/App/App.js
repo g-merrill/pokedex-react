@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import NavBar from '../../components/NavBar/NavBar';
+import HomePage from '../HomePage/HomePage';
 import PokedexPage from '../PokedexPage/PokedexPage';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
@@ -36,10 +37,13 @@ class App extends Component {
 		return (
 			<div className="App">
 				<header className="App-header">
-					<h1>Welcome to your Pokédex!</h1>
+					<h1>Pokédex Lite</h1>
+					<NavBar user={this.state.user} handleLogout={this.handleLogout} />
 				</header>
-				<NavBar user={this.state.user} handleLogout={this.handleLogout} />
 				<Switch>
+					<Route exact path='/' render={() =>
+						<HomePage />
+					}/>
 					<Route exact path='/pokedex' render={() => (
 						userService.getUser() ?
 						<PokedexPage />

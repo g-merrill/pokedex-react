@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import AddPokemonForm from '../../components/AddPokemonForm/AddPokemonForm';
+import PokemonCard from '../../components/PokemonCard/PokemonCard';
 import userService from '../../utils/userService';
+import './PokedexPage.css';
 
 
 // more components to render the list of pokemon
@@ -42,24 +44,16 @@ class PokedexPage extends Component {
 	}
 
 	render() {
-		const pokemonTiles = this.state.pokemon.map((onePokemon) => (
-			<div key={onePokemon._id}>
-				<img src={onePokemon.imgURL} alt={onePokemon.name} />
-				<ul>
-					<li>Name: {onePokemon.name}</li>
-					<li>Type (one): {onePokemon.types[0].type.name}</li>
-					<li>Ability (one): {onePokemon.abilities[0].ability.name}</li>
-				</ul>
-				<button className="btn btn-danger" onClick={() => this.handleRemovePokemon(onePokemon._id)}>Remove</button>
-			</div>
+		const cards = this.state.pokemon.map((onePokemon) => (
+			<PokemonCard key={onePokemon._id} pokemon={onePokemon} handleRemovePokemon={this.handleRemovePokemon} />
 		));
 
 		return (
-			<div className="PokedexPage">
+			<div className="PokedexPage container">
 				<AddPokemonForm handlePokemonListUpdate={this.handlePokemonListUpdate} sendErrMsg={this.sendErrMsg} />
 				{this.state.message ? <p>{this.state.message}</p> : null}
 				<hr />
-				{this.state.pokemon.length ? <div>{pokemonTiles}</div> : <h4>No Pokémon Added</h4>}
+				{this.state.pokemon.length ? <div className="PokemonCards">{cards}</div> : <h4 className="text-muted">No Pokémon Added</h4>}
 			</div>
 		);
 	}
