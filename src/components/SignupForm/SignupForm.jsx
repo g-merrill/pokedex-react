@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import userService from '../../utils/userService';
-// Add Bootstrap CDN
 
 class SignupForm extends Component {
 

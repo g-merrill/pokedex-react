@@ -7,10 +7,12 @@ class LoginPage extends Component {
 	
 	state = {
 		email: '',
-		pw: ''
+		pw: '',
+		message: ''
 	};
 
 	handleChange = (e) => {
+		this.updateMessage('');
 		this.setState({
 			[e.target.name]: e.target.value
 		});
@@ -22,13 +24,17 @@ class LoginPage extends Component {
 			await userService.login(this.state);
 			// Let <App> know a user has signed up!
 			this.props.handleSignupOrLogin();
-			// Successfully logged in --> Modify the redirect
+			// Successfully logged in
 			this.props.history.push('/pokedex');
 		} catch (err) {
 			// Use a modal or toast in your apps instead of alert
-			// update a message?
-			alert('Invalid Credentials!');
+			// use err.message?
+			this.updateMessage('Invalid Credentials!');
 		}
+	}
+
+	updateMessage = (msg) => {
+		this.setState({ message: msg });
 	}
 
 	render() {
@@ -53,6 +59,7 @@ class LoginPage extends Component {
 						</div>
 					</div>
 				</form>
+				{this.state.message ? <p className="alert alert-danger">{this.state.message}</p> : null}
 			</div>
 		);
 	}

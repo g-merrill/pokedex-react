@@ -5,7 +5,6 @@ import userService from '../../utils/userService';
 import './PokedexPage.css';
 
 
-// more components to render the list of pokemon
 class PokedexPage extends Component {
 	state = {
 		pokemon: [],
@@ -13,7 +12,8 @@ class PokedexPage extends Component {
 	};
 
 	handlePokemonListUpdate = (pokemonArray) => {
-		this.setState({ pokemon: pokemonArray, message: '' });
+		let sortedArray = this.sortPokemon(pokemonArray);
+		this.setState({ pokemon: sortedArray, message: '' });
 	}
 
 	handleRemovePokemon = async (id) => {
@@ -25,7 +25,6 @@ class PokedexPage extends Component {
 		this.setState({ message: 'Pokémon Does Not Exist' });
 	}
 
-	// check if idNum is a string or number? / check is array is not emptyXX / add to setState functions / update model properties
 	sortPokemon = (arr) => {
 		if (arr.length > 1) {
 			arr.sort(function(a, b) {
@@ -51,7 +50,7 @@ class PokedexPage extends Component {
 		return (
 			<div className="PokedexPage container">
 				<AddPokemonForm handlePokemonListUpdate={this.handlePokemonListUpdate} sendErrMsg={this.sendErrMsg} />
-				{this.state.message ? <p>{this.state.message}</p> : null}
+				{this.state.message ? <p className="alert alert-danger">{this.state.message}</p> : null}
 				<hr />
 				{this.state.pokemon.length ? <div className="PokemonCards">{cards}</div> : <h4 className="text-muted">No Pokémon Added</h4>}
 			</div>

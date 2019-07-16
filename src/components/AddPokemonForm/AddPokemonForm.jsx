@@ -6,9 +6,13 @@ class AddPokemonForm extends Component {
 
 	state = {
 		name: '',
+		idNum: null,
 		abilities: [],
 		types: [],
-		imgURL: ''
+		imgURL: '',
+		location: '',
+		species: '',
+		stats: []
 	};
 
 	handleChange = (e) => {
@@ -20,28 +24,34 @@ class AddPokemonForm extends Component {
 	// add try catch block?
 	handleSubmit = async (e) => {
 		e.preventDefault();
-		// will error if pokemon is bad?
+		// 404 Error for not found pokemon
 		let singlePokemonInfo = await getPokemonInfo(this.state.name);
 		if (singlePokemonInfo) {
-			// will there be pokémon without these attributes?
+			// will there be pokémon without these attributes? [x]
 			this.setState({
+				idNum: singlePokemonInfo.id,
 				abilities: singlePokemonInfo.abilities,
 				types: singlePokemonInfo.types,
-				imgURL: singlePokemonInfo.sprites.front_default
+				imgURL: singlePokemonInfo.sprites.front_default,
+				location: singlePokemonInfo.location_area_encounters,
+				species: singlePokemonInfo.species.url,
+				stats: singlePokemonInfo.stats
 			});
 			let pokemon = await userService.addPokemon(this.state);
 			this.props.handlePokemonListUpdate(pokemon);
 		} else {
 			this.props.sendErrMsg();
 		}
-		// if found pokemon info, then set state with pertinent info --> add to db --> update Schema and delete current subdocs in ATLAS --> render on page
 		// add more calls to fetch
-		// add if block for below handle update? [x]
 		this.setState({
 			name: '',
+			idNum: null,
 			abilities: [],
 			types: [],
-			imgURL: ''
+			imgURL: '',
+			location: '',
+			species: '',
+			stats: []
 		});
 	}
 
