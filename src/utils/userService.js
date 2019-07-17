@@ -63,7 +63,6 @@ function addPokemon(data) {
 		},
 		body: JSON.stringify(data)
 	};
-	// add error handling?
 	return fetch(BASE_URL + 'pokemon', options).then(res => res.json());
 }
 

@@ -31,7 +31,6 @@ class App extends Component {
 
 
 	/*--- Lifecycle Methods ---*/
-	// add any other necessary auth
 
 	render() {
 		return (

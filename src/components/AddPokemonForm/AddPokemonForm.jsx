@@ -21,13 +21,12 @@ class AddPokemonForm extends Component {
 		});
 	}
 
-	// add try catch block?
+
 	handleSubmit = async (e) => {
 		e.preventDefault();
 		// 404 Error for not found pokemon
 		let singlePokemonInfo = await getPokemonInfo(this.state.name);
 		if (singlePokemonInfo) {
-			// will there be pokémon without these attributes? [x]
 			this.setState({
 				idNum: singlePokemonInfo.id,
 				abilities: singlePokemonInfo.abilities,
@@ -67,7 +66,7 @@ class AddPokemonForm extends Component {
 					</div>
 					<div className="form-group">
 						<div className="col-sm-12">
-							<button className="btn btn-primary">Add</button>&nbsp;&nbsp;
+							<button className="btn btn-primary">Add</button>
 						</div>
 					</div>
 				</form>

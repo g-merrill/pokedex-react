@@ -7,5 +7,20 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-content: flex-start;
-	/*justify-content: space-around;*/
+}
+
+.ToggleButtons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.ToggleButtons > h6 {
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-right: 6px;
+}
+
+.ToggleButtons > button {
+	margin: 6px;
 }

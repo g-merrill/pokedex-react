@@ -27,8 +27,7 @@ class LoginPage extends Component {
 			// Successfully logged in
 			this.props.history.push('/pokedex');
 		} catch (err) {
-			// Use a modal or toast in your apps instead of alert
-			// use err.message?
+			// Can use a modal, toast or use err.message
 			this.updateMessage('Invalid Credentials!');
 		}
 	}

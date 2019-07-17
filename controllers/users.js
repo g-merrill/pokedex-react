@@ -41,7 +41,7 @@ async function login(req, res) {
 	}
 }
 
-// use to expose API and sort the pokémon if possible
+
 async function index(req, res) {
 	try {
 		let user = await User.findOne({_id: req.user._id});
@@ -52,14 +52,12 @@ async function index(req, res) {
 }
 
 
-// JWT token already has the user document, but will have stale list if pokémon are added
 async function create(req, res) {
 	try {
 		let user = await User.findOne({_id: req.user._id});
 		user.pokemon.push(req.body);
 		user.save(function(err, user) {
 			if (err) return res.status(400).json(err);
-			// console.log(user);
 			res.status(200).json(user.pokemon);
 		});
 	} catch (err) {
@@ -86,7 +84,6 @@ async function dlte(req, res) {
 function createJWT(user) {
 	// delete user.pokemon;
 	user.pokemon = [];
-	// console.log(user);
 	return jwt.sign(
 		{user}, // data payload
 		SECRET,

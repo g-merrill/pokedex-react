@@ -8,7 +8,11 @@ import './PokedexPage.css';
 class PokedexPage extends Component {
 	state = {
 		pokemon: [],
-		message: ''
+		message: '',
+		showTypes: false,
+		showAbilities: false,
+		showStats: false,
+		showDate: false
 	};
 
 	handlePokemonListUpdate = (pokemonArray) => {
@@ -19,6 +23,11 @@ class PokedexPage extends Component {
 	handleRemovePokemon = async (id) => {
 		let pokemon = await userService.removePokemon(id);
 		this.handlePokemonListUpdate(pokemon);
+	}
+
+	handleToggle = (e) => {
+		let toggle = !this.state[e.target.name];
+		this.setState({ [e.target.name]: toggle });
 	}
 
 	sendErrMsg = () => {
@@ -44,7 +53,15 @@ class PokedexPage extends Component {
 
 	render() {
 		const cards = this.state.pokemon.map((onePokemon) => (
-			<PokemonCard key={onePokemon._id} pokemon={onePokemon} handleRemovePokemon={this.handleRemovePokemon} />
+			<PokemonCard
+				key={onePokemon._id}
+				pokemon={onePokemon}
+				handleRemovePokemon={this.handleRemovePokemon}
+				showTypes={this.state.showTypes}
+				showAbilities={this.state.showAbilities}
+				showStats={this.state.showStats}
+				showDate={this.state.showDate}
+			/>
 		));
 
 		return (
@@ -52,7 +69,20 @@ class PokedexPage extends Component {
 				<AddPokemonForm handlePokemonListUpdate={this.handlePokemonListUpdate} sendErrMsg={this.sendErrMsg} />
 				{this.state.message ? <p className="alert alert-danger">{this.state.message}</p> : null}
 				<hr />
-				{this.state.pokemon.length ? <div className="PokemonCards">{cards}</div> : <h4 className="text-muted">No Pokémon Added</h4>}
+				{this.state.pokemon.length ?
+					<>
+						<div className="ToggleButtons">
+							<h6>Toggle Fields:</h6>
+							<button className={this.state.showTypes ? "btn btn-sm btn-outline-secondary active" : "btn btn-sm btn-outline-secondary"} name="showTypes" onClick={this.handleToggle}>Types</button>
+							<button className={this.state.showAbilities ? "btn btn-sm btn-outline-secondary active" : "btn btn-sm btn-outline-secondary"} name="showAbilities" onClick={this.handleToggle}>Abilities</button>
+							<button className={this.state.showStats ? "btn btn-sm btn-outline-secondary active" : "btn btn-sm btn-outline-secondary"} name="showStats" onClick={this.handleToggle}>Base Stats</button>
+							<button className={this.state.showDate ? "btn btn-sm btn-outline-secondary active" : "btn btn-sm btn-outline-secondary"} name="showDate" onClick={this.handleToggle}>Date Added</button>
+						</div>
+						<div className="PokemonCards">{cards}</div>
+					</>
+					:
+					<h4 className="text-muted">No Pokémon Added</h4>
+				}
 			</div>
 		);
 	}

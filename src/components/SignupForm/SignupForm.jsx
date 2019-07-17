@@ -25,7 +25,7 @@ class SignupForm extends Component {
 			await userService.signup(this.state);
 			// Let <App> know a user has signed up!
 			this.props.handleSignupOrLogin();
-			// Successfully signed up --> Modify the redirect
+			// Successfully signed up
 			this.props.history.push('/pokedex');
 		} catch (err) {
 			// Invalid user data (probably duplicate email)
