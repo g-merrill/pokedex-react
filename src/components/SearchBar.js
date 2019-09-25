@@ -5,7 +5,7 @@ export class SearchBar extends Component {
     return (
       <div>
         <label htmlFor="search">Search:</label>
-        <input type="text" name="search" />
+        <input type="text" name="search" onChange={ (e) => this.props.handleChange(e) } />
       </div>
     );
   }

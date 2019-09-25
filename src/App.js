@@ -11,6 +11,19 @@ class App extends React.Component {
     this.state = {
       pokemon: data.pokemon
     }
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    let pokemon = data.pokemon;
+
+    if (e.target.value.length > 0) {
+      pokemon = pokemon.filter(poke => poke.name.includes(e.target.value));
+    }
+
+    this.setState({
+      pokemon
+    })
   }
 
   render() {
@@ -18,7 +31,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Navbar />
-        <SearchBar />
+        <SearchBar handleChange={ this.handleChange } />
         <PokeContainer pokemon={ this.state.pokemon } />
       </div>
     );
