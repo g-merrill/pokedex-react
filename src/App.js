@@ -1,4 +1,6 @@
 import React from 'react';
+import Navbar from './components/Navbar';
+import PokeContainer from './components/PokeContainer';
 import './App.css';
 let data = require('./originalNine.json');
 
@@ -9,7 +11,8 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <h1>Pokedex</h1>
+        <Navbar />
+        <PokeContainer />
       </div>
     );
   }

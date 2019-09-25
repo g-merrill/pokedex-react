@@ -19,5 +19,5 @@ Our pokedex is error free but it's also free of any functionality. Let's start b
 | `<SearchForm>` | Renders a single input field and accepts a `onChange` function prop |
 | `<PokemonCard>` | Renders a card of information for each Pokemon in our dataset |
 
-In this step we'll also add the Bulma CSS framework. It's similar to bootstrap and will provide us with a better style without writing a ton of custom CSS (we'll still write some of our own though).
+In this step we'll also add the Bulma CSS framework, specifically `react-bulma-components`. It's similar to bootstrap and will provide us with a better style without writing a ton of custom CSS (we'll still write some of our own though).
 
