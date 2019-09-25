@@ -4,7 +4,8 @@ export class SearchBar extends Component {
   render() {
     return (
       <div>
-        <input type="text" />
+        <label htmlFor="search">Search:</label>
+        <input type="text" name="search" />
       </div>
     );
   }
