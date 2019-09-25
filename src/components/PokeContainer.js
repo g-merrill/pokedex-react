@@ -6,6 +6,7 @@ class PokeContainer extends Component {
     let pokemon = this.props.pokemon.map(poke => {
       return(
         <PokeCard
+          key={poke.id}
           id={poke.id}
           name={poke.name}
           typesArray={poke.types}

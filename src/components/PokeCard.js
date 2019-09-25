@@ -1,8 +1,8 @@
 import React from 'react';
 
 const PokeCard = (props) => {
-  const printableTypes = props.typesArray.map(type => {
-    return <p><strong>Type:</strong> { type.name }</p>;
+  const printableTypes = props.typesArray.map((type, idx) => {
+    return <p key={idx}><strong>Type:</strong> { type.name }</p>;
   });
 
   return (
