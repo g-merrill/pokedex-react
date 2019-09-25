@@ -15,7 +15,7 @@ Our pokedex is error free but it's also free of any functionality. Let's start b
 | Component | Responsibilities |
 |---|---|
 | `<NavBar>` | Rendered by `<App>`. |
-| `<PokemonContainer>` | Rendered by `<App>`. Renders a title and the following components:<br>- A `<SearchForm>` component <br>- `<PokemonCard>` component for each Pokemon in the list |
+| `<PokemonContainer>` | Rendered by `<App>`. Renders a title and the following components:<br>- A `<SearchForm>` component <br>- A `<PokemonCard>` component for each Pokemon in the list |
 | `<SearchForm>` | Renders a single input field and accepts a `onChange` function prop |
 | `<PokemonCard>` | Renders a card of information for each Pokemon in our dataset |
 
