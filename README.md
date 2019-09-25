@@ -9,3 +9,14 @@ Make sure to run `npm install` in the project directory to install the packages 
 
 Take a minute to tour the starting code including the `json` file with our starter data.
 
+### Step 1: Add Some Components
+Our pokedex is error free but it's also free of any functionality. Let's start by building some components to display when we load up localhost. 
+
+	| Component | Responsibilities |
+	|---|---|
+	| `<NavBar>` | Rendered by `<App>`. |
+	| `<PokemonContainer>` | Rendered by `<App>`. Renders a title and the following components:<br>- A `<SearchForm>` component <br>- `<PokemonCard>` component for each Pokemon in the list |
+	| `<SearchForm>` | Renders a single input field and accepts a `onChange` function prop |
+	| `<PokemonCard>` | Renders a card of information for each Pokemon in our dataset |
+
+
