@@ -1,0 +1,257 @@
+{
+  "pokemon": [
+    {
+      "id": 1,
+      "name": "bulbasaur",
+      "base_experience": 64,
+      "height": 7,
+      "weight": 69,
+      "types": [
+        {
+          "name": "poison",
+          "color": "yellowgreen"
+        },
+        {
+          "name": "grass",
+          "color": "darkgreen"
+        }
+      ],
+      "sprites": {
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/1.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1.png"
+      },
+      "abilities": [
+        {
+          "name": "chlorophyll"
+        },
+        {
+          "name": "overgrow"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "ivysaur",
+      "base_experience": 142,
+      "height": 10,
+      "weight": 130,
+      "types": [
+        {
+          "name": "poison",
+          "color": "yellowgreen"
+        },
+        {
+          "name": "grass",
+          "color": "darkgreen"
+        }
+      ],
+      "sprites": {
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/2.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/2.png"
+      },
+      "abilities": [
+        {
+          "name": "chlorophyll",
+          "effect": "This Pokémon's Speed is doubled during strong sunlight.\n\nThis bonus does not count as a stat modifier."
+        },
+        {
+          "name": "overgrow",
+          "effect": "When this Pokémon has 1/3 or less of its HP remaining, its grass-type moves inflict 1.5× as much regular damage."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "venusaur",
+      "base_experience": 236,
+      "height": 20,
+      "weight": 1000,
+      "types": [
+        {
+          "name": "poison",
+          "color": "yellowgreen"
+        },
+        {
+          "name": "grass",
+          "color": "darkgreen"
+        }
+      ],
+      "sprites": {
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/3.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/3.png"
+      },
+      "abilities": [
+        {
+          "name": "chlorophyll",
+          "effect": "This Pokémon's Speed is doubled during strong sunlight.\n\nThis bonus does not count as a stat modifier."
+        },
+        {
+          "name": "overgrow",
+          "effect": "When this Pokémon has 1/3 or less of its HP remaining, its grass-type moves inflict 1.5× as much regular damage."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "charmander",
+      "base_experience": 62,
+      "height": 6,
+      "weight": 85,
+      "types": [
+        {
+          "name": "fire",
+          "color": "orangered"
+        }
+      ],
+      "sprites": {
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/4.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/4.png"
+      },
+      "abilities": [
+        {
+          "name":	"solar-power",
+          "effect": "During strong sunlight, this Pokémon has 1.5× its Special Attack but takes 1/8 of its maximum HP in damage after each turn."
+        },
+        {
+          "name": "blaze",
+          "effect": "When this Pokémon has 1/3 or less of its HP remaining, its fire-type moves inflict 1.5× as much regular damage."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "charmeleon",
+      "base_experience": 142,
+      "height": 11,
+      "weight": 190,
+      "types": [
+        {
+          "name": "fire",
+          "color": "orangered"
+        }
+      ],
+      "sprites": {
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/5.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/5.png"
+      },
+      "abilities": [
+        {
+          "name":	"solar-power",
+          "effect": "During strong sunlight, this Pokémon has 1.5× its Special Attack but takes 1/8 of its maximum HP in damage after each turn."
+        },
+        {
+          "name": "blaze",
+          "effect": "When this Pokémon has 1/3 or less of its HP remaining, its fire-type moves inflict 1.5× as much regular damage."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "charizard",
+      "base_experience": 240,
+      "height": 17,
+      "weight": 905,
+      "types": [
+        {
+          "name": "fire",
+          "color": "orangered"
+        }
+      ],
+      "sprites": {
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/6.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/6.png"
+      },
+      "abilities": [
+        {
+          "name":	"solar-power",
+          "effect": "During strong sunlight, this Pokémon has 1.5× its Special Attack but takes 1/8 of its maximum HP in damage after each turn."
+        },
+        {
+          "name": "blaze",
+          "effect": "When this Pokémon has 1/3 or less of its HP remaining, its fire-type moves inflict 1.5× as much regular damage."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "squirtle",
+      "base_experience": 63,
+      "height": 5,
+      "weight": 90,
+      "types": [
+        {
+          "name": "water",
+          "color": "deepskyblue"
+        }
+      ],
+      "sprites": {
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/7.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/7.png"
+      },
+      "abilities": [
+        {
+          "name": "rain-dish",
+          "effect": "This Pokémon heals for 1/16 of its maximum HP after each turn during rain."
+        },
+        {
+          "name": "torrent",
+          "effect": "When this Pokémon has 1/3 or less of its HP remaining, its water-type moves inflict 1.5× as much regular damage."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "wartortle",
+      "base_experience": 142,
+      "height": 10,
+      "weight": 225,
+      "types": [
+        {
+          "name": "water",
+          "color": "deepskyblue"
+        }
+      ],
+      "sprites": {
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/8.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/8.png"
+      },
+      "abilities": [
+        {
+          "name": "rain-dish",
+          "effect": "This Pokémon heals for 1/16 of its maximum HP after each turn during rain."
+        },
+        {
+          "name": "torrent",
+          "effect": "When this Pokémon has 1/3 or less of its HP remaining, its water-type moves inflict 1.5× as much regular damage."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "blastoise",
+      "base_experience": 239,
+      "height": 16,
+      "weight": 9,
+      "types": [
+        {
+          "name": "water",
+          "color": "deepskyblue"
+        }
+      ],
+      "sprites": {
+        "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/9.png",
+        "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/9.png"
+      },
+      "abilities": [
+        {
+          "name": "rain-dish",
+          "effect": "This Pokémon heals for 1/16 of its maximum HP after each turn during rain."
+        },
+        {
+          "name": "torrent",
+          "effect": "When this Pokémon has 1/3 or less of its HP remaining, its water-type moves inflict 1.5× as much regular damage."
+        }
+      ]
+    }
+  ]
+}

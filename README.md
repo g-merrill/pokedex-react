@@ -1,44 +1,11 @@
-# React Pokédex Lite
-Project 4 (MERN-stack Application)
+# Pokedex Project
 
+During the last unit of the cohort we'll be building an in class app in conjunction with the each day's lessons. Here is the progression we'll take with this application.
 
-## Introduction
+### Step 0: Setup
+Fork and clone this repository outside of the class repo (we don't want nested git repos!).
 
-This app was developed to partly mimic the functionality of a Pokédex, where a user can add to a list of Pokémon that he/she has seen and read more about a Pokémon's details. The Pokémon information is retrieved from the [PokéAPI](https://pokeapi.co).<br>
+Make sure to run `npm install` in the project directory to install the packages included in the starter code.
 
-Landing Page:<br>
-![Screenshot of Landing Page](screenshots/LandingPage.png)
+Take a minute to tour the starting code including the `json` file with our starter data.
 
-Pokédex Page:<br>
-![Screenshot of Pokédex Page](screenshots/PokedexPage.png)
-
-
-## Getting Started
-
-- Trello Board: [Project 4](https://trello.com/b/hnv5V7IQ/project-4-pokédex)
-- Heroku Deployed App: [React Pokédex Lite](https://react-pokedex-lite.herokuapp.com)
-
-
-## Technologies Used
-
-- HTML5
-- CSS3 with Bootstrap v4.3
-- JavaScript
-- React with client-side routing
-- Node.js
-- Express.js
-- MongoDB Atlas
-- Mongoose ODM
-- JWT (Token-based Authentication and Authorization)
-- PokéAPI v2
-
-
-## Future Enhancements
-
-- Add functionality to see a modal with a Pokémon's evolution chain
-- Add encounter location and flavor text information
-
-
-## Credits
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
