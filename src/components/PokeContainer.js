@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+
+import 'react-bulma-components/dist/react-bulma-components.min.css';
+import { Columns } from 'react-bulma-components';
+
 import SearchForm from './SearchForm';
 import PokeCard from './PokeCard';
 
@@ -22,7 +26,12 @@ class PokeContainer extends Component {
           handleSearch={ this.props.handleSearch }
         />
         
-        { cards }
+        <Columns>
+          { this.props.pokemon.length > 0 
+            ? cards 
+            : "No cards"
+          }
+        </Columns>
       </div>
     );
   }

@@ -4,7 +4,7 @@ const PokeCard = (props) => {
   let types = props.types.map((t, idx) => <li style={{ backgroundColor: t.color }} key={idx}>{ t.name }</li>);
 
   return (
-    <div>
+    <div className="column is-one-third">
       <img src={ props.avatar } alt={ props.name } />
       <p>
         <strong>Name:</strong> { props.name }

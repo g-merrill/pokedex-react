@@ -1,4 +1,8 @@
 import React from 'react';
+
+import 'react-bulma-components/dist/react-bulma-components.min.css';
+import { Section, Container } from 'react-bulma-components';
+
 import NavBar from './components/NavBar';
 import PokeContainer from './components/PokeContainer'
 import './App.css';
@@ -30,11 +34,15 @@ class App extends React.Component {
     return (
       <div className="App">
         <NavBar />
-        <h1>Pokedex</h1>
-        <PokeContainer 
-          pokemon={ this.state.pokemon }
-          handleSearch={ this.handleSearch }
-        />
+
+        <Section>
+          <Container>
+            <PokeContainer 
+              pokemon={ this.state.pokemon }
+              handleSearch={ this.handleSearch }
+            />
+          </Container>
+        </Section>
       </div>
     );
   }
