@@ -1,12 +1,22 @@
 import React, { Component } from 'react';
 
+import 'react-bulma-components/dist/react-bulma-components.min.css';
+import { Columns } from 'react-bulma-components';
+
 export class SearchBar extends Component {
   render() {
     return (
-      <div>
-        <label htmlFor="search">Search:</label>
-        <input type="text" name="search" onChange={ (e) => this.props.handleChange(e) } />
-      </div>
+      <Columns>
+        <div className="column is-full">
+          <input 
+            className="input" 
+            type="text" 
+            name="search" 
+            placeholder="Search your collection..."
+            onChange={ (e) => this.props.handleChange(e) }
+          />
+        </div>
+      </Columns>
     );
   }
 }

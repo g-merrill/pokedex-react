@@ -1,4 +1,8 @@
 import React from 'react';
+
+import 'react-bulma-components/dist/react-bulma-components.min.css';
+import { Section, Container } from 'react-bulma-components';
+
 import Navbar from './components/Navbar';
 import SearchBar from './components/SearchBar';
 import PokeContainer from './components/PokeContainer';
@@ -17,8 +21,8 @@ class App extends React.Component {
   handleChange(e) {
     let pokemon = data.pokemon;
 
-    if (e.target.value.length > 0) {
-      pokemon = pokemon.filter(poke => poke.name.includes(e.target.value));
+    if (e.target.value) {
+      pokemon = pokemon.filter(poke => poke.name.includes(e.target.value.toLowerCase()));
     }
 
     this.setState({
@@ -31,8 +35,13 @@ class App extends React.Component {
     return (
       <div className="App">
         <Navbar />
-        <SearchBar handleChange={ this.handleChange } />
-        <PokeContainer pokemon={ this.state.pokemon } />
+
+        <Section>
+          <Container>
+            <SearchBar handleChange={ this.handleChange } />
+            <PokeContainer pokemon={ this.state.pokemon } />
+          </Container>
+        </Section>
       </div>
     );
   }

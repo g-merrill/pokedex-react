@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+
+import 'react-bulma-components/dist/react-bulma-components.min.css';
+import { Columns } from 'react-bulma-components';
+
 import PokeCard from './PokeCard';
 
 class PokeContainer extends Component {
@@ -19,11 +23,9 @@ class PokeContainer extends Component {
     });
 
     return (
-      <div>
-        PokeContainer  
-
+      <Columns>
         { pokemon }
-      </div>
+      </Columns>
     );
   }
 }
