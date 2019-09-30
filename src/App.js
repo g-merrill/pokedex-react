@@ -1,11 +1,14 @@
 import React from 'react';
 
+import { Route, Switch } from 'react-router-dom';
+
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import { Section, Container } from 'react-bulma-components';
 
 import Navbar from './components/Navbar';
 import SearchBar from './components/SearchBar';
 import PokeContainer from './components/PokeContainer';
+import PokeDetail from './components/PokeDetail';
 import './App.css';
 let data = require('./originalNine.json');
 
@@ -35,13 +38,27 @@ class App extends React.Component {
     return (
       <div className="App">
         <Navbar />
-
-        <Section>
-          <Container>
-            <SearchBar handleChange={ this.handleChange } />
-            <PokeContainer pokemon={ this.state.pokemon } />
-          </Container>
-        </Section>
+        
+        <Switch>
+          <Route exact path="/" render={ () => 
+            <Section>
+              <Container>
+                <SearchBar 
+                  handleChange={ this.handleChange } 
+                />
+                <PokeContainer 
+                  pokemon={ this.state.pokemon } 
+                />
+              </Container>
+            </Section>
+          } />
+          <Route path="/pokemon/:id" render={ props => 
+            <PokeDetail 
+              {...props}
+              data={ data.pokemon[props.match.params.id - 1] }
+            />
+          } />
+        </Switch>
       </div>
     );
   }
