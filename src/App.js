@@ -3,8 +3,9 @@ import React from 'react';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import { Section, Container } from 'react-bulma-components';
 
-import NavBar from './components/NavBar';
-import PokeContainer from './components/PokeContainer'
+import Navbar from './components/Navbar';
+import SearchBar from './components/SearchBar';
+import PokeContainer from './components/PokeContainer';
 import './App.css';
 let data = require('./originalNine.json');
 
@@ -18,7 +19,7 @@ class App extends React.Component {
     // this.handleSearch = this.handleSearch.bind(this);
   }
 
-  handleSearch = (e) => {
+  handleChange = (e) => {
     let pokemon = data.pokemon;
 
     if (e.target.value) {
@@ -33,14 +34,12 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <NavBar />
+        <Navbar />
 
         <Section>
           <Container>
-            <PokeContainer 
-              pokemon={ this.state.pokemon }
-              handleSearch={ this.handleSearch }
-            />
+            <SearchBar handleChange={ this.handleChange } />
+            <PokeContainer pokemon={ this.state.pokemon } />
           </Container>
         </Section>
       </div>
