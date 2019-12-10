@@ -5,7 +5,6 @@ import { Route, Switch } from 'react-router-dom';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import { Section, Container } from 'react-bulma-components';
 
-import Navbar from './components/Navbar';
 import SearchBar from './components/SearchBar';
 import PokeContainer from './components/PokeContainer';
 import PokeDetail from './components/PokeDetail';
@@ -36,9 +35,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <Navbar />
-        
+      <div className="App">        
         <Switch>
           <Route exact path="/" render={ () => 
             <Section>

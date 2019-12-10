@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Section, Hero, Container, Columns } from 'react-bulma-components';
+import { Hero, Columns } from 'react-bulma-components';
 
 export class PokeDetail extends Component {
   render() {
